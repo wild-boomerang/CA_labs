@@ -57,7 +57,7 @@ void SolutionWithAsm()
     auto *D = new __int16[size] {4, 4, 4, 4, 5, 5, 5, 5};
 
     __m64 vectorA, vectorB, vectorC, ABSum;
-    for (int i = 0; i < 8; ++i)
+    for (int i = 0; i < size; ++i)
     {
         vectorA.m64_i8[i] = A[i];
         vectorB.m64_i8[i] = B[i];
@@ -91,9 +91,9 @@ void SolutionWithAsm()
     print(lowHalfC, "word");
 
     __m64 vectorD1, vectorD2, CDSum1, CDSum2;
-    for (int i = 0; i < 4; ++i)
+    for (int i = 0; i < size / 2; ++i)
         vectorD1.m64_i16[i] = D[i];
-    for (int i = 4, j = 0; i < 8; ++i, ++j)
+    for (int i = size / 2, j = 0; i < size; ++i, ++j)
         vectorD2.m64_i16[j] = D[i];
     __asm
     {
