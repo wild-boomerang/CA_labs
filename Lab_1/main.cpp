@@ -23,6 +23,8 @@
 //    return sum;
 //}
 
+// F[i] = (A[i] + B[i]) * (C[i] + D[i]), i = 1...8
+
 void print(__m64 value, const std::string& type)
 {
     if (type == "byte")
@@ -45,18 +47,134 @@ void print(__m64 value, const std::string& type)
     }
 }
 
-//    __asm
-//    {
-//        movq mm0, AB_sum
-//        PUNPCKHBW mm0, CHighHalf  // high half (right half)
-//        movq CHighHalf, mm0
-//        movq mm0, AB_sum
-//        PUNPCKLBW mm0, CLowHalf // low half (left half)
-//        movq CLowHalf, mm0
-//    }
+void SolutionWithAsm()
+{
+    std::cout << "F[i] = (A[i] + B[i]) * (C[i] + D[i]), i = 1...8\n";
+    int size = 8;
+    auto *A = new __int8[size] {1, 1, 1, 1, 2, 2, 2, 2};
+    auto *B = new __int8[size] {2, 2, 2, 2, 3, 3, 3, 3};
+    auto *C = new __int8[size] {3, 3, 3, 3, 4, 4, 4, 4};
+    auto *D = new __int16[size] {4, 4, 4, 4, 5, 5, 5, 5};
 
-// F[i] = (A[i] + B[i]) * (C[i] + D[i]), i = 1...8
-void Solution()
+    __m64 vectorA, vectorB, vectorC, ABSum;
+    for (int i = 0; i < 8; ++i)
+    {
+        vectorA.m64_i8[i] = A[i];
+        vectorB.m64_i8[i] = B[i];
+        vectorC.m64_i8[i] = C[i];
+    }
+    __asm
+    {
+        movq mm0, vectorA
+        paddsb mm0, vectorB // A + B
+        movq ABSum, mm0
+    }
+
+    std::cout << "A + B\n";
+    print(ABSum, "byte");
+
+    __m64 zeroVector, highHalfC, lowHalfC;
+    zeroVector.m64_i64 = 0;
+    __asm
+    {
+        movq mm0, vectorC
+        punpckhbw mm0, zeroVector // highHalfC
+        movq highHalfC, mm0
+        movq mm0, vectorC
+        punpcklbw mm0, zeroVector // lowHalfC
+        movq lowHalfC, mm0
+    }
+
+    std::cout << "The high half of C\n";
+    print(highHalfC, "word");
+    std::cout << "The low half of C\n";
+    print(lowHalfC, "word");
+
+    __m64 vectorD1, vectorD2, CDSum1, CDSum2;
+    for (int i = 0; i < 4; ++i)
+        vectorD1.m64_i16[i] = D[i];
+    for (int i = 4, j = 0; i < 8; ++i, ++j)
+        vectorD2.m64_i16[j] = D[i];
+    __asm
+    {
+        movq mm0, lowHalfC
+        paddsw mm0, vectorD1 // C1 + D1
+        movq CDSum1, mm0
+
+        movq mm0, highHalfC
+        paddsw mm0, vectorD2 // C2 + D2
+        movq CDSum2, mm0
+    }
+
+    std::cout << "The first half of (C + D)\n";
+    print(CDSum1, "word");
+    std::cout << "The second half of (C + D)\n";
+    print(CDSum2, "word");
+
+    __m64 ABHighHalf, ABLowHalf;
+    __asm
+    {
+        movq mm0, ABSum
+        punpckhbw mm0, zeroVector // ABHighHalf
+        movq ABHighHalf, mm0
+        movq mm0, ABSum
+        punpcklbw mm0, zeroVector // ABLowHalf
+        movq ABLowHalf, mm0
+    }
+
+    std::cout << "The first half of (A + B)\n";
+    print(ABHighHalf, "word");
+    std::cout << "The second half of (A + B)\n";
+    print(ABLowHalf, "word");
+
+    __m64 highHalfRes1, lowHalfRes1, highHalfRes2, lowHalfRes2;
+    __asm
+    {
+        movq mm0, ABLowHalf
+        pmulhw mm0, CDSum1
+        movq highHalfRes1, mm0
+
+        movq mm0, ABLowHalf
+        pmullw mm0, CDSum1
+        movq lowHalfRes1, mm0
+
+        movq mm0, ABHighHalf
+        pmulhw mm0, CDSum2
+        movq highHalfRes2, mm0
+
+        movq mm0, ABHighHalf
+        pmullw mm0, CDSum2
+        movq lowHalfRes2, mm0
+    }
+
+    __m64 FPart1, FPart2, FPart3, FPart4;
+    __asm
+    {
+        movq mm0, lowHalfRes1
+        punpckhwd mm0, highHalfRes1 // FPart1
+        movq FPart1, mm0
+
+        movq mm0, lowHalfRes1
+        punpcklwd mm0, highHalfRes1 // FPart2
+        movq FPart2, mm0
+
+        movq mm0, lowHalfRes2
+        punpckhwd mm0, highHalfRes2 // FPart3
+        movq FPart3, mm0
+
+        movq mm0, lowHalfRes2
+        punpcklwd mm0, highHalfRes2 // FPart4
+        movq FPart4, mm0
+    }
+
+    std::cout << "Answers (F[i]):\n";
+    print(FPart1, "dword");
+    print(FPart2, "dword");
+    print(FPart3, "dword");
+    print(FPart4, "dword");
+}
+
+void SolutionWithIntrinsics()
 {
     std::cout << "F[i] = (A[i] + B[i]) * (C[i] + D[i]), i = 1...8\n";
     int size = 8;
@@ -117,7 +235,8 @@ void Solution()
 
 int main()
 {
-    Solution();
+    SolutionWithIntrinsics();
+//    SolutionWithAsm();
 
 //    float arr[4] = {5.5, 5.5, 5.5, 5.5};
 //    std::cout << inner2(arr, arr, 4);
