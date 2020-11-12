@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+# my
+first_try.cpp
