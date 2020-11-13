@@ -149,6 +149,33 @@ DynamicQueue.cpp.s:
 	$(MAKE) -f CMakeFiles\Lab_2.dir\build.make CMakeFiles/Lab_2.dir/DynamicQueue.cpp.s
 .PHONY : DynamicQueue.cpp.s
 
+MutexFixedSizeQueue.obj: MutexFixedSizeQueue.cpp.obj
+
+.PHONY : MutexFixedSizeQueue.obj
+
+# target to build an object file
+MutexFixedSizeQueue.cpp.obj:
+	$(MAKE) -f CMakeFiles\Lab_2.dir\build.make CMakeFiles/Lab_2.dir/MutexFixedSizeQueue.cpp.obj
+.PHONY : MutexFixedSizeQueue.cpp.obj
+
+MutexFixedSizeQueue.i: MutexFixedSizeQueue.cpp.i
+
+.PHONY : MutexFixedSizeQueue.i
+
+# target to preprocess a source file
+MutexFixedSizeQueue.cpp.i:
+	$(MAKE) -f CMakeFiles\Lab_2.dir\build.make CMakeFiles/Lab_2.dir/MutexFixedSizeQueue.cpp.i
+.PHONY : MutexFixedSizeQueue.cpp.i
+
+MutexFixedSizeQueue.s: MutexFixedSizeQueue.cpp.s
+
+.PHONY : MutexFixedSizeQueue.s
+
+# target to generate assembly for a file
+MutexFixedSizeQueue.cpp.s:
+	$(MAKE) -f CMakeFiles\Lab_2.dir\build.make CMakeFiles/Lab_2.dir/MutexFixedSizeQueue.cpp.s
+.PHONY : MutexFixedSizeQueue.cpp.s
+
 first_try.obj: first_try.cpp.obj
 
 .PHONY : first_try.obj
@@ -269,6 +296,9 @@ help:
 	@echo ... DynamicQueue.obj
 	@echo ... DynamicQueue.i
 	@echo ... DynamicQueue.s
+	@echo ... MutexFixedSizeQueue.obj
+	@echo ... MutexFixedSizeQueue.i
+	@echo ... MutexFixedSizeQueue.s
 	@echo ... first_try.obj
 	@echo ... first_try.i
 	@echo ... first_try.s

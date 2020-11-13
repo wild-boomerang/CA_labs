@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "D:/Work/Clion_works/Term_5/CA_labs/Lab_2/DynamicQueue.cpp" "D:/Work/Clion_works/Term_5/CA_labs/Lab_2/cmake-build-debug/CMakeFiles/Lab_2.dir/DynamicQueue.cpp.obj"
+  "D:/Work/Clion_works/Term_5/CA_labs/Lab_2/MutexFixedSizeQueue.cpp" "D:/Work/Clion_works/Term_5/CA_labs/Lab_2/cmake-build-debug/CMakeFiles/Lab_2.dir/MutexFixedSizeQueue.cpp.obj"
   "D:/Work/Clion_works/Term_5/CA_labs/Lab_2/first_try.cpp" "D:/Work/Clion_works/Term_5/CA_labs/Lab_2/cmake-build-debug/CMakeFiles/Lab_2.dir/first_try.cpp.obj"
   "D:/Work/Clion_works/Term_5/CA_labs/Lab_2/main.cpp" "D:/Work/Clion_works/Term_5/CA_labs/Lab_2/cmake-build-debug/CMakeFiles/Lab_2.dir/main.cpp.obj"
   "D:/Work/Clion_works/Term_5/CA_labs/Lab_2/queue.cpp" "D:/Work/Clion_works/Term_5/CA_labs/Lab_2/cmake-build-debug/CMakeFiles/Lab_2.dir/queue.cpp.obj"

@@ -7,14 +7,18 @@
 
 #include <queue>
 #include <mutex>
+#include <thread>
+
 #include "queue.h"
 
 class DynamicQueue : queue
 {
 private:
     std::queue<uint8_t> _queue;
-    std::mutex _lcck;
+    std::mutex _lock;
 public:
+    DynamicQueue();
+
     void push(uint8_t val) override;
     bool pop(uint8_t& val) override;
 };

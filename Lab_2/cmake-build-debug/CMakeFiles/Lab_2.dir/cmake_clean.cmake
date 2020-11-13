@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Lab_2.dir/DynamicQueue.cpp.obj"
+  "CMakeFiles/Lab_2.dir/MutexFixedSizeQueue.cpp.obj"
   "CMakeFiles/Lab_2.dir/first_try.cpp.obj"
   "CMakeFiles/Lab_2.dir/main.cpp.obj"
   "CMakeFiles/Lab_2.dir/queue.cpp.obj"

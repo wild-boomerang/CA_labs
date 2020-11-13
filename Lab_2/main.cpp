@@ -5,10 +5,11 @@
 //#include <future>
 //#include <condition_variable>
 #include <vector>
-#include <array>
 #include <chrono>
 #include <ctime>
 #include <string>
+
+#include "DynamicQueue.h"
 
 
 char* InitializeMy()
@@ -23,7 +24,7 @@ char* InitializeMy()
     return arr;
 }
 
-void CheckArr(std::vector<int> &arr, int numThreads, unsigned int workTime, std::string solutionName)
+void CheckArr(std::vector<int> &arr, int numThreads, unsigned int workTime, const std::string& solutionName)
 {
     int errorsQuantity = 0;
     std::vector<int> errInd;
@@ -162,19 +163,104 @@ void Menu()
 {
     int choice;
 
-    std::cout << "What do you want?\n" << "1. Without sleep\n" << "2. With sleep\n";
+    std::cout << "What do you want?\n"
+              << "1. Without sleep\n"
+              << "2. With sleep\n";
     std::cin >> choice;
 
 }
 
+void CheckTask2(std::vector<int> &counters, int producerNum, int consumerNum, int taskNum, DynamicQueue &queue,
+        unsigned int duration)
+{
+    int consumerAnswer = 0, producerAnswer = producerNum * taskNum;
+    for (auto counter : counters)
+    {
+        consumerAnswer += counter;
+    }
 
+    std::cout << "Dynamic-sized queue:\n"
+              << "ProducerNum = " << producerNum << ", " << "ConsumerNum = " << consumerNum << "\n"
+              << "Duration: " << duration << "\n";
+
+    uint8_t val;
+    int quantity = 0;
+    while (queue.pop(val))
+    {
+        quantity += val;
+    }
+
+    if (consumerAnswer == producerAnswer)
+    {
+        std::cout << "Everything is clear!\n\n";
+    } else
+    {
+        std::cout << "Error!\n"
+                  << (((quantity + consumerAnswer) == producerAnswer) ? "true\n" : "false\n")
+                  << consumerAnswer << "\n"
+                  << producerAnswer << "\n\n";
+    }
+}
+
+
+void ProducerWork(DynamicQueue &queue, const int taskNum)
+{
+    for (int i = 0; i < taskNum; i++) { queue.push((uint8_t )1); }
+}
+
+void ConsumerWork(DynamicQueue &queue, int &counter)
+{
+    uint8_t val;
+    while (queue.pop(val))
+    {
+        counter += val;
+    }
+}
+
+void Task2(const std::vector<int> &producerNum, const std::vector<int> &consumerNum, const int taskNum)
+{
+    for (auto prNum : producerNum)
+    {
+        for (auto conNum : consumerNum)
+        {
+            DynamicQueue dynamicQueue;
+
+            std::vector<std::thread> producers;
+            std::vector<std::thread> consumers;
+            std::vector<int> counters(conNum, 0);
+
+            unsigned int start = clock();
+            for (int i = 0; i < prNum; i++)
+            {
+                std::thread prod(ProducerWork, std::ref(dynamicQueue), taskNum);
+                producers.push_back(std::move(prod));
+            }
+
+            for (int i = 0; i < conNum; i++)
+            {
+                std::thread consumer(ConsumerWork, std::ref(dynamicQueue), std::ref(counters[i]));
+                consumers.push_back(std::move(consumer));
+            }
+
+            for (auto &p : producers)
+            {
+                p.join();
+            }
+
+            for (auto &c : consumers)
+            {
+                c.join();
+            }
+
+            unsigned int end = clock();
+
+            CheckTask2(counters, prNum, conNum, taskNum, dynamicQueue, end - start);
+        }
+    }
+}
 
 int main()
 {
-//    char *arr = InitializeMy();
-    const int numTasks = 1024 * 1024;
-    std::vector<int> const numThreads = {4, 8, 16, 32};
-
     int choice;
 
     do
@@ -188,6 +274,10 @@ int main()
 
         if (choice == 1)
         {
+//            char *arr = InitializeMy();
+            const int numTasks = 1024 * 1024;
+            const std::vector<int> numThreads = {4, 8, 16, 32};
+
             std::cout << "Task 1:\n"
                       << "1. Without sleep\n"
                       << "2. With sleep\n"
@@ -210,6 +300,11 @@ int main()
             }
         } else if (choice == 2)
         {
+            choice = 0;
+            const std::vector<int> producerNum {1, 2, 4};
+            const std::vector<int> consumerNum {1, 2, 4};
+            const int taskNum = 4 * 1024 * 1024;
+
             std::cout << "Task 2:\n"
                       << "1. Dynamic-sized queue\n"
                       << "2. Mutex fixed size queue\n"
@@ -219,7 +314,7 @@ int main()
 
             switch (choice) {
                 case 1: {
-
+                    Task2(producerNum, consumerNum, taskNum);
                     break;
                 }
                 case 2: {

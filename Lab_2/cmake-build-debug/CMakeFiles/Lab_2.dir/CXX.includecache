@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+D:/Work/Clion_works/Term_5/CA_labs/Lab_2/DynamicQueue.h
+queue
+-
+mutex
+-
+thread
+-
+queue.h
+D:/Work/Clion_works/Term_5/CA_labs/Lab_2/queue.h
+
 D:/Work/Clion_works/Term_5/CA_labs/Lab_2/main.cpp
 iostream
 -
@@ -17,12 +27,16 @@ atomic
 -
 vector
 -
-array
--
 chrono
 -
 ctime
 -
 string
+-
+DynamicQueue.h
+D:/Work/Clion_works/Term_5/CA_labs/Lab_2/DynamicQueue.h
+
+D:/Work/Clion_works/Term_5/CA_labs/Lab_2/queue.h
+cstdint
 -
 
