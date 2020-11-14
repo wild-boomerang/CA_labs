@@ -11,7 +11,7 @@
 
 #include "queue.h"
 
-class DynamicQueue : queue
+class DynamicQueue : public queue
 {
 private:
     std::queue<uint8_t> _queue;

@@ -5,9 +5,14 @@ CMakeFiles/Lab_2.dir/DynamicQueue.cpp.obj: ../DynamicQueue.cpp
 CMakeFiles/Lab_2.dir/DynamicQueue.cpp.obj: ../DynamicQueue.h
 CMakeFiles/Lab_2.dir/DynamicQueue.cpp.obj: ../queue.h
 
+CMakeFiles/Lab_2.dir/MutexFixedSizeQueue.cpp.obj: ../MutexFixedSizeQueue.cpp
+CMakeFiles/Lab_2.dir/MutexFixedSizeQueue.cpp.obj: ../MutexFixedSizeQueue.h
+CMakeFiles/Lab_2.dir/MutexFixedSizeQueue.cpp.obj: ../queue.h
+
 CMakeFiles/Lab_2.dir/first_try.cpp.obj: ../first_try.cpp
 
 CMakeFiles/Lab_2.dir/main.cpp.obj: ../DynamicQueue.h
+CMakeFiles/Lab_2.dir/main.cpp.obj: ../MutexFixedSizeQueue.h
 CMakeFiles/Lab_2.dir/main.cpp.obj: ../main.cpp
 CMakeFiles/Lab_2.dir/main.cpp.obj: ../queue.h
 

@@ -16,6 +16,16 @@ thread
 queue.h
 D:/Work/Clion_works/Term_5/CA_labs/Lab_2/queue.h
 
+D:/Work/Clion_works/Term_5/CA_labs/Lab_2/MutexFixedSizeQueue.h
+queue
+-
+mutex
+-
+thread
+-
+queue.h
+D:/Work/Clion_works/Term_5/CA_labs/Lab_2/queue.h
+
 D:/Work/Clion_works/Term_5/CA_labs/Lab_2/main.cpp
 iostream
 -
@@ -35,6 +45,8 @@ string
 -
 DynamicQueue.h
 D:/Work/Clion_works/Term_5/CA_labs/Lab_2/DynamicQueue.h
+MutexFixedSizeQueue.h
+D:/Work/Clion_works/Term_5/CA_labs/Lab_2/MutexFixedSizeQueue.h
 
 D:/Work/Clion_works/Term_5/CA_labs/Lab_2/queue.h
 cstdint

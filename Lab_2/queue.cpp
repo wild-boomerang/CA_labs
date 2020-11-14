@@ -3,3 +3,11 @@
 //
 
 #include "queue.h"
+
+void queue::push(uint8_t val) {
+
+}
+
+bool queue::pop(uint8_t &val) {
+    return false;
+}

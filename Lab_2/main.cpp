@@ -10,6 +10,7 @@
 #include <string>
 
 #include "DynamicQueue.h"
+#include "MutexFixedSizeQueue.h"
 
 
 char* InitializeMy()
@@ -40,7 +41,7 @@ void CheckArr(std::vector<int> &arr, int numThreads, unsigned int workTime, cons
 
     std::cout << solutionName << ":\n";
     std::cout << "Threads quantity = " << numThreads << ":\n";
-    std::cout << "Work time: " << workTime << std::endl;
+    std::cout << "Work time: " << workTime << " ms\n";
 
     if (errorsQuantity == 0)
     {
@@ -170,8 +171,8 @@ void Menu()
 
 }
 
-void CheckTask2(std::vector<int> &counters, int producerNum, int consumerNum, int taskNum, DynamicQueue &queue,
-        unsigned int duration)
+void CheckTask2(std::vector<int> &counters, int producerNum, int consumerNum, int taskNum, queue *queue,
+        unsigned int duration, const std::string& about, int queueSize=0)
 {
     int consumerAnswer = 0, producerAnswer = producerNum * taskNum;
     for (auto counter : counters)
@@ -179,13 +180,14 @@ void CheckTask2(std::vector<int> &counters, int producerNum, int consumerNum, in
         consumerAnswer += counter;
     }
 
-    std::cout << "Dynamic-sized queue:\n"
+    std::cout << about + ":\n"
+              << ((queueSize) ? "Queue size = " + std::to_string(queueSize) + "\n" : "")
               << "ProducerNum = " << producerNum << ", " << "ConsumerNum = " << consumerNum << "\n"
-              << "Duration: " << duration << "\n";
+              << "Duration: " << duration << " ms\n";
 
     uint8_t val;
     int quantity = 0;
-    while (queue.pop(val))
+    while (queue->pop(val))
     {
         quantity += val;
     }
@@ -203,58 +205,90 @@ void CheckTask2(std::vector<int> &counters, int producerNum, int consumerNum, in
 }
 
 
-void ProducerWork(DynamicQueue &queue, const int taskNum)
+void ProducerWork(queue *queue, const int taskNum)
 {
-    for (int i = 0; i < taskNum; i++) { queue.push((uint8_t )1); }
+    for (int i = 0; i < taskNum; i++)
+    {
+        queue->push(1);
+    }
 }
 
-void ConsumerWork(DynamicQueue &queue, int &counter)
+void ConsumerWork(queue *queue, int &counter)
 {
     uint8_t val;
-    while (queue.pop(val))
+    while (queue->pop(val))
     {
         counter += val;
     }
 }
 
-void Task2(const std::vector<int> &producerNum, const std::vector<int> &consumerNum, const int taskNum)
+void Task2(const std::vector<int> &producerNum, const std::vector<int> &consumerNum, const int taskNum,
+           std::vector<int> queueSize=std::vector<int>(), bool atomicQueue=false)
 {
-    for (auto prNum : producerNum)
+    if (queueSize.empty()) { queueSize.push_back(0); }
+    for (auto curQueueSize : queueSize)
     {
-        for (auto conNum : consumerNum)
+        for (auto prNum : producerNum)
         {
-            DynamicQueue dynamicQueue;
-
-            std::vector<std::thread> producers;
-            std::vector<std::thread> consumers;
-            std::vector<int> counters(conNum, 0);
-
-            unsigned int start = clock();
-            for (int i = 0; i < prNum; i++)
+            for (auto conNum : consumerNum)
             {
-                std::thread prod(ProducerWork, std::ref(dynamicQueue), taskNum);
-                producers.push_back(std::move(prod));
+                queue *queue;
+                std::string about;
+
+                if (queueSize.front() == 0)
+                {
+                    queue = new DynamicQueue();
+                    about = "Dynamic-sized queue";
+                } else
+                {
+                    if (!atomicQueue)
+                    {
+                        queue = new MutexFixedSizeQueue(curQueueSize);
+                        about = "Mutex fixed size queue";
+                    } else
+                    {
+//                        queue = new AtomicFixedSizeQueue(curQueueSize);
+                        about = "Atomic fixed size queue";
+                    }
+                }
+
+//                DynamicQueue queue;
+
+                std::vector<std::thread> producers;
+                std::vector<std::thread> consumers;
+                std::vector<int> counters(conNum, 0);
+
+                unsigned int start = clock();
+                for (int i = 0; i < prNum; i++)
+                {
+//                    std::thread prod(ProducerWork, std::ref(queue), taskNum);
+                    std::thread prod(ProducerWork, queue, taskNum);
+                    producers.push_back(std::move(prod));
+                }
+
+                for (int i = 0; i < conNum; i++)
+                {
+//                    std::thread consumer(ConsumerWork, std::ref(queue), std::ref(counters[i]));
+                    std::thread consumer(ConsumerWork, queue, std::ref(counters[i]));
+                    consumers.push_back(std::move(consumer));
+                }
+
+                for (auto &p : producers)
+                {
+                    p.join();
+                }
+
+                for (auto &c : consumers)
+                {
+                    c.join();
+                }
+
+                unsigned int end = clock();
+
+                CheckTask2(counters, prNum, conNum, taskNum, queue, end - start, about, curQueueSize);
+
+                delete queue;
             }
-
-            for (int i = 0; i < conNum; i++)
-            {
-                std::thread consumer(ConsumerWork, std::ref(dynamicQueue), std::ref(counters[i]));
-                consumers.push_back(std::move(consumer));
-            }
-
-            for (auto &p : producers)
-            {
-                p.join();
-            }
-
-            for (auto &c : consumers)
-            {
-                c.join();
-            }
-
-            unsigned int end = clock();
-
-            CheckTask2(counters, prNum, conNum, taskNum, dynamicQueue, end - start);
         }
     }
 }
@@ -304,6 +338,7 @@ int main()
             const std::vector<int> producerNum {1, 2, 4};
             const std::vector<int> consumerNum {1, 2, 4};
             const int taskNum = 4 * 1024 * 1024;
+            std::vector<int> queueSize {1, 4, 16};
 
             std::cout << "Task 2:\n"
                       << "1. Dynamic-sized queue\n"
@@ -318,7 +353,7 @@ int main()
                     break;
                 }
                 case 2: {
-
+                    Task2(producerNum, consumerNum, taskNum, queueSize);
                     break;
                 }
                 default:
