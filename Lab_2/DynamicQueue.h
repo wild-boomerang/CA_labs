@@ -16,11 +16,14 @@ class DynamicQueue : public queue
 private:
     std::queue<uint8_t> _queue;
     std::mutex _lock;
+
+    int _elementsQuantity;
 public:
-    DynamicQueue();
+    explicit DynamicQueue(int elementsQuantity);
 
     void push(uint8_t val) override;
     bool pop(uint8_t& val) override;
+    bool isDone() override;
 };
 
 

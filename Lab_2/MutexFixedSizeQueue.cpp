@@ -4,7 +4,9 @@
 
 #include "MutexFixedSizeQueue.h"
 
-MutexFixedSizeQueue::MutexFixedSizeQueue(unsigned int size) : _size(size)
+#include <iostream>
+
+MutexFixedSizeQueue::MutexFixedSizeQueue(int size, int elementsNum) : _size(size), _elementsNum(elementsNum)
 {
 
 }
@@ -13,14 +15,15 @@ MutexFixedSizeQueue::MutexFixedSizeQueue(unsigned int size) : _size(size)
 // Если очередь фиксированного размера и заполнена,
 // поток повисает внутри функции пока не освободится место
 void MutexFixedSizeQueue::push(uint8_t val) {
-    std::lock_guard<std::mutex> lockGuard(_lock);
-    if (_queue.size() < _size)
-    {
-        _queue.push(val);
-    } else
-    {
+    std::unique_lock<std::mutex> ul(_lock);
 
-    }
+    _full_cond.wait(ul, [this]() { return _queue.size() < _size; }); // if _queue is full, thread should wait
+
+    _queue.push(val);
+
+//    ul.unlock();
+    _empty_cond.notify_one();
+//    ul.lock();
 }
 
 // Если очередь пуста, ждем 1 мс записи в очередь.
@@ -29,15 +32,25 @@ void MutexFixedSizeQueue::push(uint8_t val) {
 // Если очередь по прежнему пуста, возвращаем false
 bool MutexFixedSizeQueue::pop(uint8_t &val) {
     std::unique_lock<std::mutex> ul(_lock);
-    if (_queue.empty())
-    {
-        ul.unlock();
-        std::this_thread::sleep_for(std::chrono::milliseconds(1));
-        ul.lock();
-        if (_queue.empty()) { return false; }
+
+    if (!_empty_cond.wait_for(ul, std::chrono::milliseconds(1),[this]() { return !_queue.empty(); })) {
+        return false;
     }
 
     val = _queue.front();
     _queue.pop();
+    _elementsNum--;
+
+//    ul.unlock();
+    _full_cond.notify_one();
+//    ul.lock();
+
     return true;
+}
+
+// Возвращаем true, если потребителям слудет закончить свою работу,
+// иначе - false
+bool MutexFixedSizeQueue::isDone() {
+    std::lock_guard<std::mutex> lk(_lock);
+    return _elementsNum <= 0;
 }
