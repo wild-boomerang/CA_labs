@@ -82,18 +82,18 @@ CMakeFiles/Lab_2.dir/first_try.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_2.dir/first_try.cpp.s"
 	D:\Programming\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Work\Clion_works\Term_5\CA_labs\Lab_2\first_try.cpp -o CMakeFiles\Lab_2.dir\first_try.cpp.s
 
-CMakeFiles/Lab_2.dir/task_2.cpp.obj: CMakeFiles/Lab_2.dir/flags.make
-CMakeFiles/Lab_2.dir/task_2.cpp.obj: ../task_2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Work\Clion_works\Term_5\CA_labs\Lab_2\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Lab_2.dir/task_2.cpp.obj"
-	D:\Programming\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_2.dir\task_2.cpp.obj -c D:\Work\Clion_works\Term_5\CA_labs\Lab_2\task_2.cpp
+CMakeFiles/Lab_2.dir/backupMain.cpp.obj: CMakeFiles/Lab_2.dir/flags.make
+CMakeFiles/Lab_2.dir/backupMain.cpp.obj: ../backupMain.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Work\Clion_works\Term_5\CA_labs\Lab_2\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Lab_2.dir/backupMain.cpp.obj"
+	D:\Programming\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_2.dir\backupMain.cpp.obj -c D:\Work\Clion_works\Term_5\CA_labs\Lab_2\backupMain.cpp
 
-CMakeFiles/Lab_2.dir/task_2.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_2.dir/task_2.cpp.i"
-	D:\Programming\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Work\Clion_works\Term_5\CA_labs\Lab_2\task_2.cpp > CMakeFiles\Lab_2.dir\task_2.cpp.i
+CMakeFiles/Lab_2.dir/backupMain.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_2.dir/backupMain.cpp.i"
+	D:\Programming\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Work\Clion_works\Term_5\CA_labs\Lab_2\backupMain.cpp > CMakeFiles\Lab_2.dir\backupMain.cpp.i
 
-CMakeFiles/Lab_2.dir/task_2.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_2.dir/task_2.cpp.s"
-	D:\Programming\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Work\Clion_works\Term_5\CA_labs\Lab_2\task_2.cpp -o CMakeFiles\Lab_2.dir\task_2.cpp.s
+CMakeFiles/Lab_2.dir/backupMain.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_2.dir/backupMain.cpp.s"
+	D:\Programming\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Work\Clion_works\Term_5\CA_labs\Lab_2\backupMain.cpp -o CMakeFiles\Lab_2.dir\backupMain.cpp.s
 
 CMakeFiles/Lab_2.dir/queue.cpp.obj: CMakeFiles/Lab_2.dir/flags.make
 CMakeFiles/Lab_2.dir/queue.cpp.obj: ../queue.cpp
@@ -134,29 +134,89 @@ CMakeFiles/Lab_2.dir/MutexFixedSizeQueue.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_2.dir/MutexFixedSizeQueue.cpp.s"
 	D:\Programming\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Work\Clion_works\Term_5\CA_labs\Lab_2\MutexFixedSizeQueue.cpp -o CMakeFiles\Lab_2.dir\MutexFixedSizeQueue.cpp.s
 
+CMakeFiles/Lab_2.dir/ArrayCounterTask.cpp.obj: CMakeFiles/Lab_2.dir/flags.make
+CMakeFiles/Lab_2.dir/ArrayCounterTask.cpp.obj: ../ArrayCounterTask.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Work\Clion_works\Term_5\CA_labs\Lab_2\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Lab_2.dir/ArrayCounterTask.cpp.obj"
+	D:\Programming\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_2.dir\ArrayCounterTask.cpp.obj -c D:\Work\Clion_works\Term_5\CA_labs\Lab_2\ArrayCounterTask.cpp
+
+CMakeFiles/Lab_2.dir/ArrayCounterTask.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_2.dir/ArrayCounterTask.cpp.i"
+	D:\Programming\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Work\Clion_works\Term_5\CA_labs\Lab_2\ArrayCounterTask.cpp > CMakeFiles\Lab_2.dir\ArrayCounterTask.cpp.i
+
+CMakeFiles/Lab_2.dir/ArrayCounterTask.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_2.dir/ArrayCounterTask.cpp.s"
+	D:\Programming\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Work\Clion_works\Term_5\CA_labs\Lab_2\ArrayCounterTask.cpp -o CMakeFiles\Lab_2.dir\ArrayCounterTask.cpp.s
+
+CMakeFiles/Lab_2.dir/QueueTask.cpp.obj: CMakeFiles/Lab_2.dir/flags.make
+CMakeFiles/Lab_2.dir/QueueTask.cpp.obj: ../QueueTask.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Work\Clion_works\Term_5\CA_labs\Lab_2\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Lab_2.dir/QueueTask.cpp.obj"
+	D:\Programming\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_2.dir\QueueTask.cpp.obj -c D:\Work\Clion_works\Term_5\CA_labs\Lab_2\QueueTask.cpp
+
+CMakeFiles/Lab_2.dir/QueueTask.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_2.dir/QueueTask.cpp.i"
+	D:\Programming\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Work\Clion_works\Term_5\CA_labs\Lab_2\QueueTask.cpp > CMakeFiles\Lab_2.dir\QueueTask.cpp.i
+
+CMakeFiles/Lab_2.dir/QueueTask.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_2.dir/QueueTask.cpp.s"
+	D:\Programming\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Work\Clion_works\Term_5\CA_labs\Lab_2\QueueTask.cpp -o CMakeFiles\Lab_2.dir\QueueTask.cpp.s
+
+CMakeFiles/Lab_2.dir/TaskExecutor.cpp.obj: CMakeFiles/Lab_2.dir/flags.make
+CMakeFiles/Lab_2.dir/TaskExecutor.cpp.obj: ../TaskExecutor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Work\Clion_works\Term_5\CA_labs\Lab_2\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Lab_2.dir/TaskExecutor.cpp.obj"
+	D:\Programming\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_2.dir\TaskExecutor.cpp.obj -c D:\Work\Clion_works\Term_5\CA_labs\Lab_2\TaskExecutor.cpp
+
+CMakeFiles/Lab_2.dir/TaskExecutor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_2.dir/TaskExecutor.cpp.i"
+	D:\Programming\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Work\Clion_works\Term_5\CA_labs\Lab_2\TaskExecutor.cpp > CMakeFiles\Lab_2.dir\TaskExecutor.cpp.i
+
+CMakeFiles/Lab_2.dir/TaskExecutor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_2.dir/TaskExecutor.cpp.s"
+	D:\Programming\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Work\Clion_works\Term_5\CA_labs\Lab_2\TaskExecutor.cpp -o CMakeFiles\Lab_2.dir\TaskExecutor.cpp.s
+
+CMakeFiles/Lab_2.dir/LabMenu.cpp.obj: CMakeFiles/Lab_2.dir/flags.make
+CMakeFiles/Lab_2.dir/LabMenu.cpp.obj: ../LabMenu.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Work\Clion_works\Term_5\CA_labs\Lab_2\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Lab_2.dir/LabMenu.cpp.obj"
+	D:\Programming\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Lab_2.dir\LabMenu.cpp.obj -c D:\Work\Clion_works\Term_5\CA_labs\Lab_2\LabMenu.cpp
+
+CMakeFiles/Lab_2.dir/LabMenu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_2.dir/LabMenu.cpp.i"
+	D:\Programming\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Work\Clion_works\Term_5\CA_labs\Lab_2\LabMenu.cpp > CMakeFiles\Lab_2.dir\LabMenu.cpp.i
+
+CMakeFiles/Lab_2.dir/LabMenu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_2.dir/LabMenu.cpp.s"
+	D:\Programming\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Work\Clion_works\Term_5\CA_labs\Lab_2\LabMenu.cpp -o CMakeFiles\Lab_2.dir\LabMenu.cpp.s
+
 # Object files for target Lab_2
 Lab_2_OBJECTS = \
 "CMakeFiles/Lab_2.dir/main.cpp.obj" \
 "CMakeFiles/Lab_2.dir/first_try.cpp.obj" \
-"CMakeFiles/Lab_2.dir/task_2.cpp.obj" \
+"CMakeFiles/Lab_2.dir/backupMain.cpp.obj" \
 "CMakeFiles/Lab_2.dir/queue.cpp.obj" \
 "CMakeFiles/Lab_2.dir/DynamicQueue.cpp.obj" \
-"CMakeFiles/Lab_2.dir/MutexFixedSizeQueue.cpp.obj"
+"CMakeFiles/Lab_2.dir/MutexFixedSizeQueue.cpp.obj" \
+"CMakeFiles/Lab_2.dir/ArrayCounterTask.cpp.obj" \
+"CMakeFiles/Lab_2.dir/QueueTask.cpp.obj" \
+"CMakeFiles/Lab_2.dir/TaskExecutor.cpp.obj" \
+"CMakeFiles/Lab_2.dir/LabMenu.cpp.obj"
 
 # External object files for target Lab_2
 Lab_2_EXTERNAL_OBJECTS =
 
 Lab_2.exe: CMakeFiles/Lab_2.dir/main.cpp.obj
 Lab_2.exe: CMakeFiles/Lab_2.dir/first_try.cpp.obj
-Lab_2.exe: CMakeFiles/Lab_2.dir/task_2.cpp.obj
+Lab_2.exe: CMakeFiles/Lab_2.dir/backupMain.cpp.obj
 Lab_2.exe: CMakeFiles/Lab_2.dir/queue.cpp.obj
 Lab_2.exe: CMakeFiles/Lab_2.dir/DynamicQueue.cpp.obj
 Lab_2.exe: CMakeFiles/Lab_2.dir/MutexFixedSizeQueue.cpp.obj
+Lab_2.exe: CMakeFiles/Lab_2.dir/ArrayCounterTask.cpp.obj
+Lab_2.exe: CMakeFiles/Lab_2.dir/QueueTask.cpp.obj
+Lab_2.exe: CMakeFiles/Lab_2.dir/TaskExecutor.cpp.obj
+Lab_2.exe: CMakeFiles/Lab_2.dir/LabMenu.cpp.obj
 Lab_2.exe: CMakeFiles/Lab_2.dir/build.make
 Lab_2.exe: CMakeFiles/Lab_2.dir/linklibs.rsp
 Lab_2.exe: CMakeFiles/Lab_2.dir/objects1.rsp
 Lab_2.exe: CMakeFiles/Lab_2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Work\Clion_works\Term_5\CA_labs\Lab_2\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Lab_2.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Work\Clion_works\Term_5\CA_labs\Lab_2\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable Lab_2.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Lab_2.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

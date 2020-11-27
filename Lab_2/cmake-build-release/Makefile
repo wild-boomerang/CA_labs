@@ -122,6 +122,33 @@ Lab_2/fast:
 	$(MAKE) -f CMakeFiles\Lab_2.dir\build.make CMakeFiles/Lab_2.dir/build
 .PHONY : Lab_2/fast
 
+ArrayCounterTask.obj: ArrayCounterTask.cpp.obj
+
+.PHONY : ArrayCounterTask.obj
+
+# target to build an object file
+ArrayCounterTask.cpp.obj:
+	$(MAKE) -f CMakeFiles\Lab_2.dir\build.make CMakeFiles/Lab_2.dir/ArrayCounterTask.cpp.obj
+.PHONY : ArrayCounterTask.cpp.obj
+
+ArrayCounterTask.i: ArrayCounterTask.cpp.i
+
+.PHONY : ArrayCounterTask.i
+
+# target to preprocess a source file
+ArrayCounterTask.cpp.i:
+	$(MAKE) -f CMakeFiles\Lab_2.dir\build.make CMakeFiles/Lab_2.dir/ArrayCounterTask.cpp.i
+.PHONY : ArrayCounterTask.cpp.i
+
+ArrayCounterTask.s: ArrayCounterTask.cpp.s
+
+.PHONY : ArrayCounterTask.s
+
+# target to generate assembly for a file
+ArrayCounterTask.cpp.s:
+	$(MAKE) -f CMakeFiles\Lab_2.dir\build.make CMakeFiles/Lab_2.dir/ArrayCounterTask.cpp.s
+.PHONY : ArrayCounterTask.cpp.s
+
 DynamicQueue.obj: DynamicQueue.cpp.obj
 
 .PHONY : DynamicQueue.obj
@@ -149,6 +176,33 @@ DynamicQueue.cpp.s:
 	$(MAKE) -f CMakeFiles\Lab_2.dir\build.make CMakeFiles/Lab_2.dir/DynamicQueue.cpp.s
 .PHONY : DynamicQueue.cpp.s
 
+LabMenu.obj: LabMenu.cpp.obj
+
+.PHONY : LabMenu.obj
+
+# target to build an object file
+LabMenu.cpp.obj:
+	$(MAKE) -f CMakeFiles\Lab_2.dir\build.make CMakeFiles/Lab_2.dir/LabMenu.cpp.obj
+.PHONY : LabMenu.cpp.obj
+
+LabMenu.i: LabMenu.cpp.i
+
+.PHONY : LabMenu.i
+
+# target to preprocess a source file
+LabMenu.cpp.i:
+	$(MAKE) -f CMakeFiles\Lab_2.dir\build.make CMakeFiles/Lab_2.dir/LabMenu.cpp.i
+.PHONY : LabMenu.cpp.i
+
+LabMenu.s: LabMenu.cpp.s
+
+.PHONY : LabMenu.s
+
+# target to generate assembly for a file
+LabMenu.cpp.s:
+	$(MAKE) -f CMakeFiles\Lab_2.dir\build.make CMakeFiles/Lab_2.dir/LabMenu.cpp.s
+.PHONY : LabMenu.cpp.s
+
 MutexFixedSizeQueue.obj: MutexFixedSizeQueue.cpp.obj
 
 .PHONY : MutexFixedSizeQueue.obj
@@ -175,6 +229,87 @@ MutexFixedSizeQueue.s: MutexFixedSizeQueue.cpp.s
 MutexFixedSizeQueue.cpp.s:
 	$(MAKE) -f CMakeFiles\Lab_2.dir\build.make CMakeFiles/Lab_2.dir/MutexFixedSizeQueue.cpp.s
 .PHONY : MutexFixedSizeQueue.cpp.s
+
+QueueTask.obj: QueueTask.cpp.obj
+
+.PHONY : QueueTask.obj
+
+# target to build an object file
+QueueTask.cpp.obj:
+	$(MAKE) -f CMakeFiles\Lab_2.dir\build.make CMakeFiles/Lab_2.dir/QueueTask.cpp.obj
+.PHONY : QueueTask.cpp.obj
+
+QueueTask.i: QueueTask.cpp.i
+
+.PHONY : QueueTask.i
+
+# target to preprocess a source file
+QueueTask.cpp.i:
+	$(MAKE) -f CMakeFiles\Lab_2.dir\build.make CMakeFiles/Lab_2.dir/QueueTask.cpp.i
+.PHONY : QueueTask.cpp.i
+
+QueueTask.s: QueueTask.cpp.s
+
+.PHONY : QueueTask.s
+
+# target to generate assembly for a file
+QueueTask.cpp.s:
+	$(MAKE) -f CMakeFiles\Lab_2.dir\build.make CMakeFiles/Lab_2.dir/QueueTask.cpp.s
+.PHONY : QueueTask.cpp.s
+
+TaskExecutor.obj: TaskExecutor.cpp.obj
+
+.PHONY : TaskExecutor.obj
+
+# target to build an object file
+TaskExecutor.cpp.obj:
+	$(MAKE) -f CMakeFiles\Lab_2.dir\build.make CMakeFiles/Lab_2.dir/TaskExecutor.cpp.obj
+.PHONY : TaskExecutor.cpp.obj
+
+TaskExecutor.i: TaskExecutor.cpp.i
+
+.PHONY : TaskExecutor.i
+
+# target to preprocess a source file
+TaskExecutor.cpp.i:
+	$(MAKE) -f CMakeFiles\Lab_2.dir\build.make CMakeFiles/Lab_2.dir/TaskExecutor.cpp.i
+.PHONY : TaskExecutor.cpp.i
+
+TaskExecutor.s: TaskExecutor.cpp.s
+
+.PHONY : TaskExecutor.s
+
+# target to generate assembly for a file
+TaskExecutor.cpp.s:
+	$(MAKE) -f CMakeFiles\Lab_2.dir\build.make CMakeFiles/Lab_2.dir/TaskExecutor.cpp.s
+.PHONY : TaskExecutor.cpp.s
+
+backupMain.obj: backupMain.cpp.obj
+
+.PHONY : backupMain.obj
+
+# target to build an object file
+backupMain.cpp.obj:
+	$(MAKE) -f CMakeFiles\Lab_2.dir\build.make CMakeFiles/Lab_2.dir/backupMain.cpp.obj
+.PHONY : backupMain.cpp.obj
+
+backupMain.i: backupMain.cpp.i
+
+.PHONY : backupMain.i
+
+# target to preprocess a source file
+backupMain.cpp.i:
+	$(MAKE) -f CMakeFiles\Lab_2.dir\build.make CMakeFiles/Lab_2.dir/backupMain.cpp.i
+.PHONY : backupMain.cpp.i
+
+backupMain.s: backupMain.cpp.s
+
+.PHONY : backupMain.s
+
+# target to generate assembly for a file
+backupMain.cpp.s:
+	$(MAKE) -f CMakeFiles\Lab_2.dir\build.make CMakeFiles/Lab_2.dir/backupMain.cpp.s
+.PHONY : backupMain.cpp.s
 
 first_try.obj: first_try.cpp.obj
 
@@ -257,33 +392,6 @@ queue.cpp.s:
 	$(MAKE) -f CMakeFiles\Lab_2.dir\build.make CMakeFiles/Lab_2.dir/queue.cpp.s
 .PHONY : queue.cpp.s
 
-task_2.obj: task_2.cpp.obj
-
-.PHONY : task_2.obj
-
-# target to build an object file
-task_2.cpp.obj:
-	$(MAKE) -f CMakeFiles\Lab_2.dir\build.make CMakeFiles/Lab_2.dir/task_2.cpp.obj
-.PHONY : task_2.cpp.obj
-
-task_2.i: task_2.cpp.i
-
-.PHONY : task_2.i
-
-# target to preprocess a source file
-task_2.cpp.i:
-	$(MAKE) -f CMakeFiles\Lab_2.dir\build.make CMakeFiles/Lab_2.dir/task_2.cpp.i
-.PHONY : task_2.cpp.i
-
-task_2.s: task_2.cpp.s
-
-.PHONY : task_2.s
-
-# target to generate assembly for a file
-task_2.cpp.s:
-	$(MAKE) -f CMakeFiles\Lab_2.dir\build.make CMakeFiles/Lab_2.dir/task_2.cpp.s
-.PHONY : task_2.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -293,12 +401,27 @@ help:
 	@echo ... Lab_2
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... ArrayCounterTask.obj
+	@echo ... ArrayCounterTask.i
+	@echo ... ArrayCounterTask.s
 	@echo ... DynamicQueue.obj
 	@echo ... DynamicQueue.i
 	@echo ... DynamicQueue.s
+	@echo ... LabMenu.obj
+	@echo ... LabMenu.i
+	@echo ... LabMenu.s
 	@echo ... MutexFixedSizeQueue.obj
 	@echo ... MutexFixedSizeQueue.i
 	@echo ... MutexFixedSizeQueue.s
+	@echo ... QueueTask.obj
+	@echo ... QueueTask.i
+	@echo ... QueueTask.s
+	@echo ... TaskExecutor.obj
+	@echo ... TaskExecutor.i
+	@echo ... TaskExecutor.s
+	@echo ... backupMain.obj
+	@echo ... backupMain.i
+	@echo ... backupMain.s
 	@echo ... first_try.obj
 	@echo ... first_try.i
 	@echo ... first_try.s
@@ -308,9 +431,6 @@ help:
 	@echo ... queue.obj
 	@echo ... queue.i
 	@echo ... queue.s
-	@echo ... task_2.obj
-	@echo ... task_2.i
-	@echo ... task_2.s
 .PHONY : help
 
 

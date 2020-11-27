@@ -4,7 +4,7 @@
 
 #include "DynamicQueue.h"
 
-DynamicQueue::DynamicQueue(int elementsQuantity) : _elementsQuantity(elementsQuantity)
+DynamicQueue::DynamicQueue(int elementsNum) : _elementsNum(elementsNum)
 {
 
 }
@@ -31,7 +31,7 @@ bool DynamicQueue::pop(uint8_t &val) {
 
     val = _queue.front();
     _queue.pop();
-    _elementsQuantity--;
+    _elementsNum--;
 
     return true;
 }
@@ -40,5 +40,5 @@ bool DynamicQueue::pop(uint8_t &val) {
 // иначе - false
 bool DynamicQueue::isDone() {
     std::lock_guard<std::mutex> lk(_lock);
-    return _elementsQuantity <= 0;
+    return _elementsNum <= 0;
 }

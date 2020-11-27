@@ -5,6 +5,7 @@
 #ifndef LAB_2_MUTEXFIXEDSIZEQUEUE_H
 #define LAB_2_MUTEXFIXEDSIZEQUEUE_H
 
+
 #include <queue>
 #include <mutex>
 #include <thread>
@@ -12,6 +13,7 @@
 //#include <shared_mutex>
 
 #include "queue.h"
+
 
 class MutexFixedSizeQueue : public queue
 {

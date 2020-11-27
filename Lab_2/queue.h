@@ -8,6 +8,7 @@
 
 #include <cstdint>
 
+
 class queue {
 public:
     // Записывает элемент в очередь.

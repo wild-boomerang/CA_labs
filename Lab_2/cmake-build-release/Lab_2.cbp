@@ -80,16 +80,43 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="D:/Work/Clion_works/Term_5/CA_labs/Lab_2/ArrayCounterTask.cpp">
+			<Option target="Lab_2"/>
+		</Unit>
+		<Unit filename="D:/Work/Clion_works/Term_5/CA_labs/Lab_2/ArrayCounterTask.h">
+			<Option target="Lab_2"/>
+		</Unit>
 		<Unit filename="D:/Work/Clion_works/Term_5/CA_labs/Lab_2/DynamicQueue.cpp">
 			<Option target="Lab_2"/>
 		</Unit>
 		<Unit filename="D:/Work/Clion_works/Term_5/CA_labs/Lab_2/DynamicQueue.h">
 			<Option target="Lab_2"/>
 		</Unit>
+		<Unit filename="D:/Work/Clion_works/Term_5/CA_labs/Lab_2/LabMenu.cpp">
+			<Option target="Lab_2"/>
+		</Unit>
+		<Unit filename="D:/Work/Clion_works/Term_5/CA_labs/Lab_2/LabMenu.h">
+			<Option target="Lab_2"/>
+		</Unit>
 		<Unit filename="D:/Work/Clion_works/Term_5/CA_labs/Lab_2/MutexFixedSizeQueue.cpp">
 			<Option target="Lab_2"/>
 		</Unit>
 		<Unit filename="D:/Work/Clion_works/Term_5/CA_labs/Lab_2/MutexFixedSizeQueue.h">
+			<Option target="Lab_2"/>
+		</Unit>
+		<Unit filename="D:/Work/Clion_works/Term_5/CA_labs/Lab_2/QueueTask.cpp">
+			<Option target="Lab_2"/>
+		</Unit>
+		<Unit filename="D:/Work/Clion_works/Term_5/CA_labs/Lab_2/QueueTask.h">
+			<Option target="Lab_2"/>
+		</Unit>
+		<Unit filename="D:/Work/Clion_works/Term_5/CA_labs/Lab_2/TaskExecutor.cpp">
+			<Option target="Lab_2"/>
+		</Unit>
+		<Unit filename="D:/Work/Clion_works/Term_5/CA_labs/Lab_2/TaskExecutor.h">
+			<Option target="Lab_2"/>
+		</Unit>
+		<Unit filename="D:/Work/Clion_works/Term_5/CA_labs/Lab_2/backupMain.cpp">
 			<Option target="Lab_2"/>
 		</Unit>
 		<Unit filename="D:/Work/Clion_works/Term_5/CA_labs/Lab_2/first_try.cpp">
@@ -102,9 +129,6 @@
 			<Option target="Lab_2"/>
 		</Unit>
 		<Unit filename="D:/Work/Clion_works/Term_5/CA_labs/Lab_2/queue.h">
-			<Option target="Lab_2"/>
-		</Unit>
-		<Unit filename="D:/Work/Clion_works/Term_5/CA_labs/Lab_2/task_2.cpp">
 			<Option target="Lab_2"/>
 		</Unit>
 		<Unit filename="D:/Work/Clion_works/Term_5/CA_labs/Lab_2/CMakeLists.txt">

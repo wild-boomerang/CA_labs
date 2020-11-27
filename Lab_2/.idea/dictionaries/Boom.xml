@@ -1,8 +1,12 @@
 <component name="ProjectDictionaryState">
   <dictionary name="Boom">
     <words>
+      <w>arraycountertask</w>
       <w>dynamicqueue</w>
+      <w>labmenu</w>
       <w>mutexfixedsizequeue</w>
+      <w>queuetask</w>
+      <w>taskexecutor</w>
     </words>
   </dictionary>
 </component>
