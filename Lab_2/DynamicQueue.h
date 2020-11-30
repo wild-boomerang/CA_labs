@@ -26,6 +26,8 @@ public:
     void push(uint8_t val) override;
     bool pop(uint8_t& val) override;
     bool isDone() override;
+    bool isProducersDone() override;
+    void producerDone() override;
 };
 
 

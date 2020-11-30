@@ -55,10 +55,12 @@ void QueueTask::RunWitGivenQueueSize(QueueType queueType, int queueSize)
             switch (queueType) {
                 case QueueType::dynamic:
                     queue = new DynamicQueue(_taskNum * prNum);
+//                    queue = new DynamicQueue(prNum);
                     about = "Dynamic-sized queue";
                     break;
                 case QueueType::fixedMutex:
                     queue = new MutexFixedSizeQueue(queueSize, _taskNum * prNum);
+//                    queue = new MutexFixedSizeQueue(queueSize, prNum);
                     about = "Mutex fixed size queue";
                     break;
                 case QueueType::fixedAtomic:
@@ -107,11 +109,13 @@ void QueueTask::ProducerWork(queue *queue) const {
     for (int i = 0; i < _taskNum; i++) {
         queue->push(1);
     }
+//    queue->producerDone();
 }
 
 void QueueTask::ConsumerWork(queue *queue, int &counter) {
     uint8_t val;
     while (!queue->isDone()) {
+//    while (!queue->isProducersDone()) {
         if (queue->pop(val)) { counter += val; }
     }
 }
@@ -132,7 +136,7 @@ void QueueTask::PrintResults(bool isCorrect, int producerNum, int consumerNum, l
     std::time_t time = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
     std::cout << std::ctime(&time)
               << about + ":\n"
-              << ((queueSize) ? "QueueType size = " + std::to_string(queueSize) + "\n" : "")
+              << ((queueSize) ? "Queue size = " + std::to_string(queueSize) + "\n" : "")
               << "ProducerNum = " << producerNum << ", " << "ConsumerNum = " << consumerNum << "\n"
               << "Duration: " << (double)duration / 1000 << " s\n";
 

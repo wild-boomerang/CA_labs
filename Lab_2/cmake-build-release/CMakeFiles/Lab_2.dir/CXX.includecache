@@ -6,18 +6,6 @@
 
 #IncludeRegexTransform: 
 
-D:/Work/Clion_works/Term_5/CA_labs/Lab_2/ArrayCounterTask.cpp
-iostream
--
-chrono
--
-mutex
--
-atomic
--
-ArrayCounterTask.h
-D:/Work/Clion_works/Term_5/CA_labs/Lab_2/ArrayCounterTask.h
-
 D:/Work/Clion_works/Term_5/CA_labs/Lab_2/ArrayCounterTask.h
 vector
 -
@@ -51,6 +39,12 @@ TaskExecutor.h
 D:/Work/Clion_works/Term_5/CA_labs/Lab_2/TaskExecutor.h
 
 D:/Work/Clion_works/Term_5/CA_labs/Lab_2/LabMenu.h
+
+D:/Work/Clion_works/Term_5/CA_labs/Lab_2/MutexFixedSizeQueue.cpp
+MutexFixedSizeQueue.h
+D:/Work/Clion_works/Term_5/CA_labs/Lab_2/MutexFixedSizeQueue.h
+iostream
+-
 
 D:/Work/Clion_works/Term_5/CA_labs/Lab_2/MutexFixedSizeQueue.h
 queue
@@ -86,6 +80,12 @@ string
 queue.h
 D:/Work/Clion_works/Term_5/CA_labs/Lab_2/queue.h
 
+D:/Work/Clion_works/Term_5/CA_labs/Lab_2/TaskExecutor.cpp
+TaskExecutor.h
+D:/Work/Clion_works/Term_5/CA_labs/Lab_2/TaskExecutor.h
+ArrayCounterTask.h
+D:/Work/Clion_works/Term_5/CA_labs/Lab_2/ArrayCounterTask.h
+
 D:/Work/Clion_works/Term_5/CA_labs/Lab_2/TaskExecutor.h
 QueueTask.h
 D:/Work/Clion_works/Term_5/CA_labs/Lab_2/QueueTask.h
@@ -115,10 +115,6 @@ MutexFixedSizeQueue.h
 D:/Work/Clion_works/Term_5/CA_labs/Lab_2/MutexFixedSizeQueue.h
 QueueTask.h
 D:/Work/Clion_works/Term_5/CA_labs/Lab_2/QueueTask.h
-
-D:/Work/Clion_works/Term_5/CA_labs/Lab_2/main.cpp
-LabMenu.h
-D:/Work/Clion_works/Term_5/CA_labs/Lab_2/LabMenu.h
 
 D:/Work/Clion_works/Term_5/CA_labs/Lab_2/queue.cpp
 queue.h

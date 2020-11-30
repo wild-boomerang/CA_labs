@@ -23,6 +23,12 @@ public:
     // Возвращаем true, если потребителям слудет закончить свою работу,
     // иначе - false
     virtual bool isDone() = 0;
+    // Возвращаем true, если потребителям слудет закончить свою работу,
+    // иначе - false
+    virtual bool isProducersDone() = 0;
+    // Производитель по окончании своей работы должен вызвать этот метод
+    virtual void producerDone() = 0;
+
     virtual ~queue();
 };
 

@@ -54,3 +54,16 @@ bool MutexFixedSizeQueue::isDone() {
     std::lock_guard<std::mutex> lk(_lock);
     return _elementsNum <= 0;
 }
+
+// Производитель по окончании своей работы должен вызвать этот метод
+void MutexFixedSizeQueue::producerDone() {
+    std::lock_guard<std::mutex> lk(_lock);
+    _elementsNum--;
+}
+
+// Возвращаем true, если потребителям слудет закончить свою работу,
+// иначе - false
+bool MutexFixedSizeQueue::isProducersDone() {
+    std::lock_guard<std::mutex> lk(_lock);
+    return _elementsNum <= 0 && _queue.empty();
+}
