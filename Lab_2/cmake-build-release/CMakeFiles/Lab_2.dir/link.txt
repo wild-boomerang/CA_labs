@@ -1,3 +1,1 @@
-"D:\Programming\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\Lab_2.dir/objects.a
-D:\Programming\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\ar.exe cr CMakeFiles\Lab_2.dir/objects.a @CMakeFiles\Lab_2.dir\objects1.rsp
-D:\Programming\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe -O3 -DNDEBUG   -Wl,--whole-archive CMakeFiles\Lab_2.dir/objects.a -Wl,--no-whole-archive  -o Lab_2.exe -Wl,--out-implib,libLab_2.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Lab_2.dir\linklibs.rsp
+/usr/bin/c++  -O3 -DNDEBUG   CMakeFiles/Lab_2.dir/main.cpp.o CMakeFiles/Lab_2.dir/first_try.cpp.o CMakeFiles/Lab_2.dir/backupMain.cpp.o CMakeFiles/Lab_2.dir/queue.cpp.o CMakeFiles/Lab_2.dir/DynamicQueue.cpp.o CMakeFiles/Lab_2.dir/MutexFixedSizeQueue.cpp.o CMakeFiles/Lab_2.dir/ArrayCounterTask.cpp.o CMakeFiles/Lab_2.dir/QueueTask.cpp.o CMakeFiles/Lab_2.dir/TaskExecutor.cpp.o CMakeFiles/Lab_2.dir/LabMenu.cpp.o  -o Lab_2 

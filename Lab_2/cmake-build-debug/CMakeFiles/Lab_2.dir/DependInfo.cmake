@@ -4,16 +4,16 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/Work/Clion_works/Term_5/CA_labs/Lab_2/ArrayCounterTask.cpp" "D:/Work/Clion_works/Term_5/CA_labs/Lab_2/cmake-build-debug/CMakeFiles/Lab_2.dir/ArrayCounterTask.cpp.obj"
-  "D:/Work/Clion_works/Term_5/CA_labs/Lab_2/DynamicQueue.cpp" "D:/Work/Clion_works/Term_5/CA_labs/Lab_2/cmake-build-debug/CMakeFiles/Lab_2.dir/DynamicQueue.cpp.obj"
-  "D:/Work/Clion_works/Term_5/CA_labs/Lab_2/LabMenu.cpp" "D:/Work/Clion_works/Term_5/CA_labs/Lab_2/cmake-build-debug/CMakeFiles/Lab_2.dir/LabMenu.cpp.obj"
-  "D:/Work/Clion_works/Term_5/CA_labs/Lab_2/MutexFixedSizeQueue.cpp" "D:/Work/Clion_works/Term_5/CA_labs/Lab_2/cmake-build-debug/CMakeFiles/Lab_2.dir/MutexFixedSizeQueue.cpp.obj"
-  "D:/Work/Clion_works/Term_5/CA_labs/Lab_2/QueueTask.cpp" "D:/Work/Clion_works/Term_5/CA_labs/Lab_2/cmake-build-debug/CMakeFiles/Lab_2.dir/QueueTask.cpp.obj"
-  "D:/Work/Clion_works/Term_5/CA_labs/Lab_2/TaskExecutor.cpp" "D:/Work/Clion_works/Term_5/CA_labs/Lab_2/cmake-build-debug/CMakeFiles/Lab_2.dir/TaskExecutor.cpp.obj"
-  "D:/Work/Clion_works/Term_5/CA_labs/Lab_2/backupMain.cpp" "D:/Work/Clion_works/Term_5/CA_labs/Lab_2/cmake-build-debug/CMakeFiles/Lab_2.dir/backupMain.cpp.obj"
-  "D:/Work/Clion_works/Term_5/CA_labs/Lab_2/first_try.cpp" "D:/Work/Clion_works/Term_5/CA_labs/Lab_2/cmake-build-debug/CMakeFiles/Lab_2.dir/first_try.cpp.obj"
-  "D:/Work/Clion_works/Term_5/CA_labs/Lab_2/main.cpp" "D:/Work/Clion_works/Term_5/CA_labs/Lab_2/cmake-build-debug/CMakeFiles/Lab_2.dir/main.cpp.obj"
-  "D:/Work/Clion_works/Term_5/CA_labs/Lab_2/queue.cpp" "D:/Work/Clion_works/Term_5/CA_labs/Lab_2/cmake-build-debug/CMakeFiles/Lab_2.dir/queue.cpp.obj"
+  "/media/boom/01D67D93B4126FE0/Work/Clion_works/Term_5/CA_labs/Lab_2/ArrayCounterTask.cpp" "/media/boom/01D67D93B4126FE0/Work/Clion_works/Term_5/CA_labs/Lab_2/cmake-build-debug/CMakeFiles/Lab_2.dir/ArrayCounterTask.cpp.o"
+  "/media/boom/01D67D93B4126FE0/Work/Clion_works/Term_5/CA_labs/Lab_2/DynamicQueue.cpp" "/media/boom/01D67D93B4126FE0/Work/Clion_works/Term_5/CA_labs/Lab_2/cmake-build-debug/CMakeFiles/Lab_2.dir/DynamicQueue.cpp.o"
+  "/media/boom/01D67D93B4126FE0/Work/Clion_works/Term_5/CA_labs/Lab_2/LabMenu.cpp" "/media/boom/01D67D93B4126FE0/Work/Clion_works/Term_5/CA_labs/Lab_2/cmake-build-debug/CMakeFiles/Lab_2.dir/LabMenu.cpp.o"
+  "/media/boom/01D67D93B4126FE0/Work/Clion_works/Term_5/CA_labs/Lab_2/MutexFixedSizeQueue.cpp" "/media/boom/01D67D93B4126FE0/Work/Clion_works/Term_5/CA_labs/Lab_2/cmake-build-debug/CMakeFiles/Lab_2.dir/MutexFixedSizeQueue.cpp.o"
+  "/media/boom/01D67D93B4126FE0/Work/Clion_works/Term_5/CA_labs/Lab_2/QueueTask.cpp" "/media/boom/01D67D93B4126FE0/Work/Clion_works/Term_5/CA_labs/Lab_2/cmake-build-debug/CMakeFiles/Lab_2.dir/QueueTask.cpp.o"
+  "/media/boom/01D67D93B4126FE0/Work/Clion_works/Term_5/CA_labs/Lab_2/TaskExecutor.cpp" "/media/boom/01D67D93B4126FE0/Work/Clion_works/Term_5/CA_labs/Lab_2/cmake-build-debug/CMakeFiles/Lab_2.dir/TaskExecutor.cpp.o"
+  "/media/boom/01D67D93B4126FE0/Work/Clion_works/Term_5/CA_labs/Lab_2/backupMain.cpp" "/media/boom/01D67D93B4126FE0/Work/Clion_works/Term_5/CA_labs/Lab_2/cmake-build-debug/CMakeFiles/Lab_2.dir/backupMain.cpp.o"
+  "/media/boom/01D67D93B4126FE0/Work/Clion_works/Term_5/CA_labs/Lab_2/first_try.cpp" "/media/boom/01D67D93B4126FE0/Work/Clion_works/Term_5/CA_labs/Lab_2/cmake-build-debug/CMakeFiles/Lab_2.dir/first_try.cpp.o"
+  "/media/boom/01D67D93B4126FE0/Work/Clion_works/Term_5/CA_labs/Lab_2/main.cpp" "/media/boom/01D67D93B4126FE0/Work/Clion_works/Term_5/CA_labs/Lab_2/cmake-build-debug/CMakeFiles/Lab_2.dir/main.cpp.o"
+  "/media/boom/01D67D93B4126FE0/Work/Clion_works/Term_5/CA_labs/Lab_2/queue.cpp" "/media/boom/01D67D93B4126FE0/Work/Clion_works/Term_5/CA_labs/Lab_2/cmake-build-debug/CMakeFiles/Lab_2.dir/queue.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
