@@ -1,6 +1,5 @@
 #include <iostream>
 #include <mmintrin.h>
-#include <xmmintrin.h>
 
 //#define DEBUG_MODE
 #define BYTE_SIZE 8
@@ -8,45 +7,30 @@
 #define DWORD_SIZE 2
 
 
-float inner2(float* x, float* y, int n) // func for self example
-{
-    __m128 *xx, *yy;
-    __m128 p, s;
-    xx = (__m128*)x;
-    yy = (__m128*)y;
-    s = _mm_setzero_ps();
-    for (int i=0; i<n/4; ++i)
-    {
-        p = _mm_mul_ps(xx[i],yy[i]);
-        s = _mm_add_ps(s,p);
-    }
-    p = _mm_movehl_ps(p,s);
-    s = _mm_add_ps(s,p);
-    p = _mm_shuffle_ps(s,s,1);
-    s = _mm_add_ss(s,p);
-    float sum;
-    _mm_store_ss(&sum,s);
-    return sum;
-}
-
 void print(__m64 value, const std::string& type)
 {
     if (type == "byte")
     {
         for (int i = 0; i < BYTE_SIZE; ++i)
+        {
             std::cout << int(value.m64_i8[i]) << " ";
+        }
         std::cout << std::endl;
     }
     else if (type == "word")
     {
         for (int i = 0; i < WORD_SIZE; ++i)
+        {
             std::cout << int(value.m64_i16[i]) << " ";
+        }
         std::cout << std::endl;
     }
     else if (type == "dword")
     {
         for (int i = 0; i < DWORD_SIZE; ++i)
+        {
             std::cout << int(value.m64_i32[i]) << " ";
+        }
         std::cout << std::endl;
     }
 }
@@ -213,7 +197,9 @@ __m64* SolutionWithIntrinsicsWithAutomation(const __int8 *A, const __int8 *B, co
 
     __m64 CDSum[2];
     for (int i = 0; i < 2; ++i)
+    {
         CDSum[i] = _m_paddsw(CWord[i], ((__m64*)D)[i]);
+    }
 
 #ifdef DEBUG_MODE
     std::cout << "The first half of (C + D)\n";
@@ -327,13 +313,9 @@ int main()
 //    __m64 *F = SolutionWithIntrinsics(A, B, C, D);
 
     std::cout << "Answers (F[i]):\n";
-    for (int i = 0; i < 4; ++i)
-        print(F[i], "dword");
+    for (int i = 0; i < 4; ++i) { print(F[i], "dword"); }
 
 //    SolutionWithAsm();
-
-//    float arr[4] = {5.5, 5.5, 5.5, 5.5};
-//    std::cout << inner2(arr, arr, 4);
 
     return 0;
 }

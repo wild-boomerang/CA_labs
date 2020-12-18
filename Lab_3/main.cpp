@@ -72,7 +72,7 @@ void test(int n)
     int strings = n, columns = n;
     int** matrix, *vector;
 
-    //std::cin >> strings >> columns;
+//    std::cin >> strings >> columns;
 
     matrix = new int* [strings];
     for (int i = 0; i < strings; ++i) {
@@ -82,7 +82,7 @@ void test(int n)
     for (int i = 0; i < strings; ++i) {
         for (int j = 0; j < columns; ++j) {
             matrix[i][j] = rand();
-            //std::cin >> matrix[i][j];
+//            std::cin >> matrix[i][j];
         }
     }
 
@@ -91,7 +91,7 @@ void test(int n)
     vector = new int[columns];
     for (int i = 0; i < columns; ++i) {
         vector[i] = rand();
-        //std::cin >> vector[i];
+//        std::cin >> vector[i];
     }
 
 //    print_vector(vector, columns);
