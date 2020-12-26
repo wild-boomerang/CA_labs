@@ -4,9 +4,11 @@
 
 #include "DynamicQueue.h"
 
-DynamicQueue::DynamicQueue(int elementsNum) : _elementsNum(elementsNum)
-{
 
+DynamicQueue::DynamicQueue(int num, ConsumerEndImplementation consumerEndImpl)
+{
+    _consumerEndImpl = consumerEndImpl;
+    _num = num;
 }
 
 // Записывает элемент в очередь
@@ -31,27 +33,10 @@ bool DynamicQueue::pop(uint8_t &val) {
 
     val = _queue.front();
     _queue.pop();
-    _elementsNum--;
+
+    if (_consumerEndImpl == ConsumerEndImplementation::elementsNum) {
+        _num--;
+    }
 
     return true;
-}
-
-// Возвращаем true, если потребителям слудет закончить свою работу,
-// иначе - false
-bool DynamicQueue::isDone() {
-    std::lock_guard<std::mutex> lk(_lock);
-    return _elementsNum <= 0;
-}
-
-// Производитель по окончании своей работы должен вызвать этот метод
-void DynamicQueue::producerDone() {
-    std::lock_guard<std::mutex> lk(_lock);
-    _elementsNum--;
-}
-
-// Возвращаем true, если потребителям слудет закончить свою работу,
-// иначе - false
-bool DynamicQueue::isProducersDone() {
-    std::lock_guard<std::mutex> lk(_lock);
-    return _elementsNum <= 0 && _queue.empty();
 }

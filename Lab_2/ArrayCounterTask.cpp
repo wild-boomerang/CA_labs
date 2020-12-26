@@ -105,9 +105,9 @@ void ArrayCounterTask::PrintResults(bool isCorrect, int numThreads, long long wo
     if (isCorrect) {
         std::cout << "Everything is clear\n";
     } else {
-        std::cout << "Founded errors!!!\n" << errorsNum << " errors at indices..." << std::endl;
+        std::cerr << "Founded errors!!!\n" << errorsNum << " errors at indices..." << std::endl;
         for (int i : errInd) {
-            std::cout << "arr[" << i << "] = " << arr[i] << " ";
+            std::cerr << "arr[" << i << "] = " << arr[i] << " ";
         }
         std::cout << std::endl;
     }

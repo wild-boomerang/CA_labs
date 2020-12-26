@@ -13,10 +13,12 @@
 
 
 QueueTask::QueueTask(std::vector<int> producerNum, std::vector<int> consumerNum, const int taskNum,
-                     std::vector<int> queueSize) : _producerNum(std::move(producerNum)),
-                                                   _consumerNum(std::move(consumerNum)),
-                                                   _taskNum(taskNum),
-                                                   _queueSize(std::move(queueSize))
+                     std::vector<int> queueSize, ConsumerEndImplementation consumerEndImpl) :
+                     _producerNum(std::move(producerNum)),
+                     _consumerNum(std::move(consumerNum)),
+                     _taskNum(taskNum),
+                     _queueSize(std::move(queueSize)),
+                     _consumerEndImpl(consumerEndImpl)
 {
 
 }
@@ -54,13 +56,25 @@ void QueueTask::RunWitGivenQueueSize(QueueType queueType, int queueSize)
 
             switch (queueType) {
                 case QueueType::dynamic:
-                    queue = new DynamicQueue(_taskNum * prNum);
-//                    queue = new DynamicQueue(prNum);
+                    switch (_consumerEndImpl) {
+                        case ConsumerEndImplementation::elementsNum:
+                            queue = new DynamicQueue(_taskNum * prNum, _consumerEndImpl);
+                            break;
+                        case ConsumerEndImplementation::producersNum:
+                            queue = new DynamicQueue(prNum, _consumerEndImpl);
+                            break;
+                    }
                     about = "Dynamic-sized queue";
                     break;
                 case QueueType::fixedMutex:
-                    queue = new MutexFixedSizeQueue(queueSize, _taskNum * prNum);
-//                    queue = new MutexFixedSizeQueue(queueSize, prNum);
+                    switch (_consumerEndImpl) {
+                        case ConsumerEndImplementation::elementsNum:
+                            queue = new MutexFixedSizeQueue(queueSize, _taskNum * prNum, _consumerEndImpl);
+                            break;
+                        case ConsumerEndImplementation::producersNum:
+                            queue = new MutexFixedSizeQueue(queueSize, prNum, _consumerEndImpl);
+                            break;
+                    }
                     about = "Mutex fixed size queue";
                     break;
                 case QueueType::fixedAtomic:
@@ -109,13 +123,15 @@ void QueueTask::ProducerWork(queue *queue) const {
     for (int i = 0; i < _taskNum; i++) {
         queue->push(1);
     }
-//    queue->producerDone();
+
+    if (_consumerEndImpl == ConsumerEndImplementation::producersNum) {
+        queue->producerDone();
+    }
 }
 
 void QueueTask::ConsumerWork(queue *queue, int &counter) {
     uint8_t val;
-    while (!queue->isDone()) {
-//    while (!queue->isProducersDone()) {
+    while (!queue->isConsumersEnd()) {
         if (queue->pop(val)) { counter += val; }
     }
 }
@@ -143,7 +159,7 @@ void QueueTask::PrintResults(bool isCorrect, int producerNum, int consumerNum, l
     if (isCorrect) {
         std::cout << "Everything is clear!\n\n";
     } else {
-        std::cout << "Error!\n"
+        std::cerr << "Error!\n"
                   << consumerAnswer << "\n"
                   << producerAnswer << "\n\n";
     }

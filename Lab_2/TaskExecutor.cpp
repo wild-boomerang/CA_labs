@@ -19,8 +19,9 @@ void TaskExecutor::ExecuteTask_2(QueueType queueCase) {
     const std::vector<int> consumerNum {1, 2, 4};
     const int taskNum = 4 * 1024 * 1024;
     std::vector<int> queueSize {1, 4, 16};
+    ConsumerEndImplementation consumerEndImpl = ConsumerEndImplementation::elementsNum;
 
-    QueueTask queueTask(producerNum, consumerNum, taskNum, queueSize);
+    QueueTask queueTask(producerNum, consumerNum, taskNum, queueSize, consumerEndImpl);
 
     switch (queueCase) {
         case QueueType::dynamic:

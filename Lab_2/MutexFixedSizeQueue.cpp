@@ -6,9 +6,10 @@
 
 #include <iostream>
 
-MutexFixedSizeQueue::MutexFixedSizeQueue(int size, int elementsNum) : _size(size), _elementsNum(elementsNum)
+MutexFixedSizeQueue::MutexFixedSizeQueue(int size, int num, ConsumerEndImplementation consumerEndImpl) : _size(size)
 {
-
+    _consumerEndImpl = consumerEndImpl;
+    _num = num;
 }
 
 // Записывает элемент в очередь.
@@ -39,31 +40,14 @@ bool MutexFixedSizeQueue::pop(uint8_t &val) {
 
     val = _queue.front();
     _queue.pop();
-    _elementsNum--;
+
+    if (_consumerEndImpl == ConsumerEndImplementation::elementsNum) {
+        _num--;
+    }
 
 //    ul.unlock();
     _full_cond.notify_one();
 //    ul.lock();
 
     return true;
-}
-
-// Возвращаем true, если потребителям слудет закончить свою работу,
-// иначе - false
-bool MutexFixedSizeQueue::isDone() {
-    std::lock_guard<std::mutex> lk(_lock);
-    return _elementsNum <= 0;
-}
-
-// Производитель по окончании своей работы должен вызвать этот метод
-void MutexFixedSizeQueue::producerDone() {
-    std::lock_guard<std::mutex> lk(_lock);
-    _elementsNum--;
-}
-
-// Возвращаем true, если потребителям слудет закончить свою работу,
-// иначе - false
-bool MutexFixedSizeQueue::isProducersDone() {
-    std::lock_guard<std::mutex> lk(_lock);
-    return _elementsNum <= 0 && _queue.empty();
 }
