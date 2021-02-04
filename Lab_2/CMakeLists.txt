@@ -3,4 +3,9 @@ project(Lab_2)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Lab_2 main.cpp queue.cpp queue.h DynamicQueue.cpp DynamicQueue.h MutexFixedSizeQueue.cpp MutexFixedSizeQueue.h ArrayCounterTask.cpp ArrayCounterTask.h QueueTask.cpp QueueTask.h TaskExecutor.cpp TaskExecutor.h LabMenu.cpp LabMenu.h)
+file(GLOB SRC
+        "src/*.h"
+        "src/*.cpp"
+        )
+
+add_executable(Lab_2 ${SRC})
