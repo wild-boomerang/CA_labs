@@ -1,7 +1,3 @@
-//
-// Created by Boom on 27.11.2020.
-//
-
 #include "TaskExecutor.h"
 #include "ArrayCounterTask.h"
 

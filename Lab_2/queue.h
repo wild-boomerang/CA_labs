@@ -1,7 +1,3 @@
-//
-// Created by Boom on 11.11.2020.
-//
-
 #ifndef LAB_2_QUEUE_H
 #define LAB_2_QUEUE_H
 
@@ -22,22 +18,22 @@ protected:
     int _num;
     ConsumerEndImplementation _consumerEndImpl;
 public:
-    // Записывает элемент в очередь.
-    // Если очередь фиксированного размер и заполнена,
-    // поток повисает внутри функции пока не освободится место
+    // Writes an item to the queue.
+    // If the queue is fixed size and full,
+    // the thread hangs inside the function until space is freed
     virtual void push(uint8_t val) = 0;
 
-    // Если очередь пуста, ждем 1 мс записи в очередь.
-    // Если очередь не пуста, помещает значение головы в val,
-    // удаляет голову и возвращает true.
-    // Если очередь по прежнему пуста, возвращаем false
+    // If the queue is empty, wait 1 ms for writing to the queue.
+    // If the queue is not empty, puts the head value in val,
+    // removes the head and returns true.
+    // If the queue is still empty, return false
     virtual bool pop(uint8_t& val) = 0;
 
-    // Возвращаем true, если потребителям слудет закончить свою работу,
-    // иначе - false
+    // Return true if consumers should finish their work,
+    // otherwise - false
     bool isConsumersEnd();
 
-    // Производитель по окончании своей работы должен вызвать этот метод
+    // Producer, at the end of his work, must call this method.
     void producerDone();
 
     virtual ~queue();

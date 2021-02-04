@@ -1,7 +1,3 @@
-//
-// Created by Boom on 27.11.2020.
-//
-
 #include <iostream>
 #include <thread>
 
@@ -20,7 +16,7 @@ void LabMenu::Run() {
                   << "0. Exit\n";
         std::cin >> choice;
 
-        switch (choice) {
+        switch (choice) {  // todo catching exceptions
             case 1:
                 LabMenu::Task_1_Menu();
                 break;

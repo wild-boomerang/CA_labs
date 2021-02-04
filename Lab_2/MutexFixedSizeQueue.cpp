@@ -1,7 +1,3 @@
-//
-// Created by Boom on 13.11.2020.
-//
-
 #include "MutexFixedSizeQueue.h"
 
 #include <iostream>
@@ -12,9 +8,6 @@ MutexFixedSizeQueue::MutexFixedSizeQueue(int size, int num, ConsumerEndImplement
     _num = num;
 }
 
-// Записывает элемент в очередь.
-// Если очередь фиксированного размера и заполнена,
-// поток повисает внутри функции пока не освободится место
 void MutexFixedSizeQueue::push(uint8_t val) {
     std::unique_lock<std::mutex> ul(_lock);
 
@@ -27,10 +20,6 @@ void MutexFixedSizeQueue::push(uint8_t val) {
 //    ul.lock();
 }
 
-// Если очередь пуста, ждем 1 мс записи в очередь.
-// Если очередь не пуста, помещает значение головы в val,
-// удаляет голову и возвращает true.
-// Если очередь по прежнему пуста, возвращаем false
 bool MutexFixedSizeQueue::pop(uint8_t &val) {
     std::unique_lock<std::mutex> ul(_lock);
 

@@ -1,0 +1,339 @@
+Number of physical threads: 8
+What do you want?
+1. Task 1
+2. Task 2
+3. All tasks consistently
+0. Exit
+3
+Mutex solution without sleep:
+Threads quantity = 4:
+Work time: 24 ms
+Everything is clear
+
+Mutex solution without sleep:
+Threads quantity = 8:
+Work time: 40 ms
+Everything is clear
+
+Mutex solution without sleep:
+Threads quantity = 16:
+Work time: 45 ms
+Everything is clear
+
+Mutex solution without sleep:
+Threads quantity = 32:
+Work time: 89 ms
+Everything is clear
+
+Atomic solution without sleep:
+Threads quantity = 4:
+Work time: 34 ms
+Everything is clear
+
+Atomic solution without sleep:
+Threads quantity = 8:
+Work time: 30 ms
+Everything is clear
+
+Atomic solution without sleep:
+Threads quantity = 16:
+Work time: 30 ms
+Everything is clear
+
+Atomic solution without sleep:
+Threads quantity = 32:
+Work time: 31 ms
+Everything is clear
+
+Mutex solution with sleep:
+Threads quantity = 4:
+Work time: 44 ms
+Everything is clear
+
+Mutex solution with sleep:
+Threads quantity = 8:
+Work time: 102 ms
+Everything is clear
+
+Mutex solution with sleep:
+Threads quantity = 16:
+Work time: 120 ms
+Everything is clear
+
+Mutex solution with sleep:
+Threads quantity = 32:
+Work time: 122 ms
+Everything is clear
+
+Atomic solution with sleep:
+Threads quantity = 4:
+Work time: 30 ms
+Everything is clear
+
+Atomic solution with sleep:
+Threads quantity = 8:
+Work time: 29 ms
+Everything is clear
+
+Atomic solution with sleep:
+Threads quantity = 16:
+Work time: 29 ms
+Everything is clear
+
+Atomic solution with sleep:
+Threads quantity = 32:
+Work time: 31 ms
+Everything is clear
+
+Started: Thu Feb 04 13:52:14 2021
+
+Thu Feb 04 13:52:15 2021
+Dynamic-sized queue:
+ProducerNum = 1, ConsumerNum = 1
+Duration: 0.293 s
+Everything is clear!
+
+Thu Feb 04 13:52:15 2021
+Dynamic-sized queue:
+ProducerNum = 1, ConsumerNum = 2
+Duration: 0.306 s
+Everything is clear!
+
+Thu Feb 04 13:52:15 2021
+Dynamic-sized queue:
+ProducerNum = 1, ConsumerNum = 4
+Duration: 0.331 s
+Everything is clear!
+
+Thu Feb 04 13:52:16 2021
+Dynamic-sized queue:
+ProducerNum = 2, ConsumerNum = 1
+Duration: 0.531 s
+Everything is clear!
+
+Thu Feb 04 13:52:16 2021
+Dynamic-sized queue:
+ProducerNum = 2, ConsumerNum = 2
+Duration: 0.65 s
+Everything is clear!
+
+Thu Feb 04 13:52:17 2021
+Dynamic-sized queue:
+ProducerNum = 2, ConsumerNum = 4
+Duration: 0.71 s
+Everything is clear!
+
+Thu Feb 04 13:52:18 2021
+Dynamic-sized queue:
+ProducerNum = 4, ConsumerNum = 1
+Duration: 1.03 s
+Everything is clear!
+
+Thu Feb 04 13:52:20 2021
+Dynamic-sized queue:
+ProducerNum = 4, ConsumerNum = 2
+Duration: 1.313 s
+Everything is clear!
+
+Thu Feb 04 13:52:21 2021
+Dynamic-sized queue:
+ProducerNum = 4, ConsumerNum = 4
+Duration: 1.435 s
+Everything is clear!
+
+Finished: Thu Feb 04 13:52:21 2021
+Elapsed time: 6.61648 s = 0.110275 min
+
+Started: Thu Feb 04 13:52:21 2021
+
+Thu Feb 04 13:53:01 2021
+Mutex fixed size queue:
+Queue size = 1
+ProducerNum = 1, ConsumerNum = 1
+Duration: 39.59 s
+Everything is clear!
+
+Thu Feb 04 13:53:42 2021
+Mutex fixed size queue:
+Queue size = 1
+ProducerNum = 1, ConsumerNum = 2
+Duration: 41.369 s
+Everything is clear!
+
+Thu Feb 04 13:54:24 2021
+Mutex fixed size queue:
+Queue size = 1
+ProducerNum = 1, ConsumerNum = 4
+Duration: 42.435 s
+Everything is clear!
+
+Thu Feb 04 13:55:50 2021
+Mutex fixed size queue:
+Queue size = 1
+ProducerNum = 2, ConsumerNum = 1
+Duration: 85.242 s
+Everything is clear!
+
+Thu Feb 04 13:57:17 2021
+Mutex fixed size queue:
+Queue size = 1
+ProducerNum = 2, ConsumerNum = 2
+Duration: 87.485 s
+Everything is clear!
+
+Thu Feb 04 13:58:46 2021
+Mutex fixed size queue:
+Queue size = 1
+ProducerNum = 2, ConsumerNum = 4
+Duration: 88.906 s
+Everything is clear!
+
+Thu Feb 04 14:01:33 2021
+Mutex fixed size queue:
+Queue size = 1
+ProducerNum = 4, ConsumerNum = 1
+Duration: 167.455 s
+Everything is clear!
+
+Thu Feb 04 14:04:34 2021
+Mutex fixed size queue:
+Queue size = 1
+ProducerNum = 4, ConsumerNum = 2
+Duration: 180.758 s
+Everything is clear!
+
+Thu Feb 04 14:07:33 2021
+Mutex fixed size queue:
+Queue size = 1
+ProducerNum = 4, ConsumerNum = 4
+Duration: 178.767 s
+Everything is clear!
+
+Thu Feb 04 14:07:43 2021
+Mutex fixed size queue:
+Queue size = 4
+ProducerNum = 1, ConsumerNum = 1
+Duration: 10.1 s
+Everything is clear!
+
+Thu Feb 04 14:07:55 2021
+Mutex fixed size queue:
+Queue size = 4
+ProducerNum = 1, ConsumerNum = 2
+Duration: 11.473 s
+Everything is clear!
+
+Thu Feb 04 14:08:12 2021
+Mutex fixed size queue:
+Queue size = 4
+ProducerNum = 1, ConsumerNum = 4
+Duration: 17.297 s
+Everything is clear!
+
+Thu Feb 04 14:08:43 2021
+Mutex fixed size queue:
+Queue size = 4
+ProducerNum = 2, ConsumerNum = 1
+Duration: 31.238 s
+Everything is clear!
+
+Thu Feb 04 14:09:06 2021
+Mutex fixed size queue:
+Queue size = 4
+ProducerNum = 2, ConsumerNum = 2
+Duration: 22.402 s
+Everything is clear!
+
+Thu Feb 04 14:09:36 2021
+Mutex fixed size queue:
+Queue size = 4
+ProducerNum = 2, ConsumerNum = 4
+Duration: 30.676 s
+Everything is clear!
+
+Thu Feb 04 14:10:44 2021
+Mutex fixed size queue:
+Queue size = 4
+ProducerNum = 4, ConsumerNum = 1
+Duration: 67.882 s
+Everything is clear!
+
+Thu Feb 04 14:11:43 2021
+Mutex fixed size queue:
+Queue size = 4
+ProducerNum = 4, ConsumerNum = 2
+Duration: 58.845 s
+Everything is clear!
+
+Thu Feb 04 14:12:41 2021
+Mutex fixed size queue:
+Queue size = 4
+ProducerNum = 4, ConsumerNum = 4
+Duration: 58.538 s
+Everything is clear!
+
+Thu Feb 04 14:12:44 2021
+Mutex fixed size queue:
+Queue size = 16
+ProducerNum = 1, ConsumerNum = 1
+Duration: 2.642 s
+Everything is clear!
+
+Thu Feb 04 14:12:47 2021
+Mutex fixed size queue:
+Queue size = 16
+ProducerNum = 1, ConsumerNum = 2
+Duration: 3.073 s
+Everything is clear!
+
+Thu Feb 04 14:12:53 2021
+Mutex fixed size queue:
+Queue size = 16
+ProducerNum = 1, ConsumerNum = 4
+Duration: 5.682 s
+Everything is clear!
+
+Thu Feb 04 14:12:59 2021
+Mutex fixed size queue:
+Queue size = 16
+ProducerNum = 2, ConsumerNum = 1
+Duration: 6.117 s
+Everything is clear!
+
+Thu Feb 04 14:13:06 2021
+Mutex fixed size queue:
+Queue size = 16
+ProducerNum = 2, ConsumerNum = 2
+Duration: 6.748 s
+Everything is clear!
+
+Thu Feb 04 14:13:16 2021
+Mutex fixed size queue:
+Queue size = 16
+ProducerNum = 2, ConsumerNum = 4
+Duration: 9.936 s
+Everything is clear!
+
+Thu Feb 04 14:13:39 2021
+Mutex fixed size queue:
+Queue size = 16
+ProducerNum = 4, ConsumerNum = 1
+Duration: 23.346 s
+Everything is clear!
+
+Thu Feb 04 14:14:00 2021
+Mutex fixed size queue:
+Queue size = 16
+ProducerNum = 4, ConsumerNum = 2
+Duration: 20.763 s
+Everything is clear!
+
+Thu Feb 04 14:14:20 2021
+Mutex fixed size queue:
+Queue size = 16
+ProducerNum = 4, ConsumerNum = 4
+Duration: 20.207 s
+Everything is clear!
+
+Finished: Thu Feb 04 14:14:20 2021
+Elapsed time: 1319.03 s = 21.9839 min
